@@ -1,0 +1,39 @@
+/* Footer.css */
+.footer {
+  padding: 20px;
+  background: linear-gradient(90deg, #333, #555);
+  color: white;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 40px;
+  position: relative;
+}
+
+.footer p {
+  margin: 0 0 10px 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.socialList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialLink {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #4caf50;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}

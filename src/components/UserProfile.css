@@ -1,0 +1,89 @@
+/* Основные стили для контейнера */
+.user-profile {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Кнопка регистрации */
+.register-btn {
+  background-color: green;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+.register-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Кнопка входа */
+.login-btn {
+  background-color: green;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+}
+
+.login-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Кнопка "Уже есть аккаунт?" */
+.show-login-btn {
+  background-color: transparent;
+  color: green;
+  border: 2px solid green;
+  width: 100%;
+  max-width: 300px;
+}
+
+.show-login-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Кнопка "Нет аккаунта? Зарегистрируйтесь" */
+.show-register-btn {
+  background-color: transparent;
+  color: green;
+  border: 2px solid green;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.show-register-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Формы */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: green;
+  outline: none;
+}
