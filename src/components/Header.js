@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
-function Header({ isRegistered, userData }) {
+function Header() {
   const navigate = useNavigate();
 
   const handleDashboardClick = () => {
@@ -16,11 +16,12 @@ function Header({ isRegistered, userData }) {
         <nav>
           <ul>
             <li>
-              <a href="/">Чат</a>
+              <button onClick={() => navigate("/")}>Чат</button>
             </li>
             <li>
-              {/* Вернули ссылку на about_us.html */}
-              <a href="/about_us.html">О проекте</a>
+              <button onClick={() => (window.location.href = "/about_us.html")}>
+                О проекте
+              </button>
             </li>
           </ul>
         </nav>

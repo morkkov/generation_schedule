@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import UserProfile from "./components/UserProfile"; // Импорт формы регистрации
 import "./Dashboard.css";
 
-function Dashboard({ userData, isRegistered, setIsRegistered, setUserData }) {
+function Dashboard() {
   const [subjects, setSubjects] = useState([]);
   const [newSubject, setNewSubject] = useState({
     classNumber: "",
@@ -24,7 +23,6 @@ function Dashboard({ userData, isRegistered, setIsRegistered, setUserData }) {
     setSubjects(updatedSubjects);
   };
 
-  // Обработчик изменения данных нового предмета
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewSubject({
@@ -33,7 +31,6 @@ function Dashboard({ userData, isRegistered, setIsRegistered, setUserData }) {
     });
   };
 
-  // Добавление нового предмета
   const handleAddSubject = () => {
     const updatedSubjects = [...subjects, newSubject];
     saveSubjectsToLocalStorage(updatedSubjects);
@@ -42,50 +39,21 @@ function Dashboard({ userData, isRegistered, setIsRegistered, setUserData }) {
       lessonName: "",
       teacherName: "",
       availableRooms: "",
-    }); // Сброс формы
+    });
     setIsAddingSubject(false);
   };
 
-  // Удаление предмета
   const handleDeleteSubject = (index) => {
     const updatedSubjects = subjects.filter((_, i) => i !== index);
     saveSubjectsToLocalStorage(updatedSubjects);
   };
 
-  // Если пользователь не зарегистрирован, отображаем форму регистрации
-  if (!isRegistered) {
-    return (
-      <div className="dashboard-container">
-        <h2>Личный кабинет</h2>
-        <p>
-          Пожалуйста, зарегистрируйтесь, чтобы получить доступ к личному
-          кабинету.
-        </p>
-        <UserProfile
-          isRegistered={isRegistered}
-          setIsRegistered={setIsRegistered}
-          userData={userData}
-          setUserData={setUserData}
-        />
-      </div>
-    );
-  }
-
-  // Если пользователь зарегистрирован, отображаем личный кабинет
   return (
     <div className="dashboard-container">
       <div className="dashboard-card">
         <h2>Личный кабинет</h2>
-        <p>
-          <strong>Имя:</strong> {userData.name}
-        </p>
-        <p>
-          <strong>Email:</strong> {userData.email}
-        </p>
         <hr />
         <h3>Ваши предметы</h3>
-
-        {/* Список добавленных предметов */}
         <ul className="subjects-list">
           {subjects.map((subject, index) => (
             <li key={index} className="subject-item">
@@ -110,16 +78,12 @@ function Dashboard({ userData, isRegistered, setIsRegistered, setUserData }) {
             </li>
           ))}
         </ul>
-
-        {/* Кнопка добавления предмета */}
         <button
           className="add-subject-btn"
           onClick={() => setIsAddingSubject(true)}
         >
           Добавить предмет
         </button>
-
-        {/* Форма добавления предмета */}
         {isAddingSubject && (
           <div className="add-subject-form">
             <h4>Добавление нового предмета</h4>
